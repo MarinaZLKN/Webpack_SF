@@ -13,4 +13,12 @@ module.exports = {
             filename: 'index.html',
         }),
     ],
+    //Two args for DevServer:
+    devServer: {
+        /* 1st - 'scr' - the catalouge which is going to be supervised and if it to be changed - server will
+        automatically repack the project and refresh the browser */
+        watchFiles: path.join(__dirname, 'src'),
+        // port for work
+        port: 9000,
+    },
 };
