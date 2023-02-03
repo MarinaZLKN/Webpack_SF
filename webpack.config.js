@@ -8,6 +8,14 @@ module.exports = {
     output: {
         filename: 'main.js'
     },
+    module: {
+        rules: [
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+            },
+        ],
+    },
     // //entry point
     // entry: path.join(__dirname, 'src', 'index.html'),
     //     // output point
@@ -24,7 +32,7 @@ module.exports = {
         // for plugin we create a new instance with 2 args:
         new HtmlWebpackPlugin({
             // 1st - path to entry point
-            template: path.join(__dirname, 'src', 'template.html'),
+            template: path.join(__dirname, 'src', 'template.pug'),
             // 2nd - output file
             filename: 'index.html',
         }),
