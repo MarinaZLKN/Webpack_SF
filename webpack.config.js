@@ -2,6 +2,8 @@
 //HWPlugin creates the html-file automatically
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+//to extract css from files(will create a main.css file in dist with css code)
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -32,7 +34,7 @@ module.exports = {
             },
             {
                 test: /\.(scss|css)$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             }
         ],
     },
@@ -43,6 +45,9 @@ module.exports = {
             template: path.join(__dirname, 'src', 'template.pug'),
             // 2nd - output file
             filename: 'index.html',
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
         }),
     ],
     //Two args for DevServer:
