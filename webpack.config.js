@@ -8,14 +8,6 @@ module.exports = {
     output: {
         filename: 'main.js'
     },
-    module: {
-        rules: [
-            {
-                test: /\.pug$/,
-                loader: 'pug-loader',
-            },
-        ],
-    },
     // //entry point
     // entry: path.join(__dirname, 'src', 'index.html'),
     //     // output point
@@ -28,6 +20,22 @@ module.exports = {
     //         Хеш будет длиной 8 символов. */
     //     filename: 'index.[contenthash].js',
     // },
+    module: {
+        rules: [
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+                options: {
+                    // просим pug-loader расставить отступы и переносы строк
+                    pretty: true,
+                },
+            },
+            {
+                test: /\.(scss|css)$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            }
+        ],
+    },
     plugins: [
         // for plugin we create a new instance with 2 args:
         new HtmlWebpackPlugin({
