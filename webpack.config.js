@@ -57,5 +57,6 @@ module.exports = {
         watchFiles: path.join(__dirname, 'src'),
         // port for work
         port: 9000,
+        hot: true
     },
 };
