@@ -1,0 +1,4 @@
+/* files that should not be checked by EsLint*/
+
+/.git
+node_modules

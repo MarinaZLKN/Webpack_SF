@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --debug src/",
+    "lint:write": "eslint --debug src/ --fix",
+    "prettier": "prettier --write src/**/*.js",
     "build": "webpack --mode production",
     "serve": "webpack serve --open --mode development",
     "dev": "webpack --mode development",

@@ -1,9 +1,11 @@
-import './main.scss';
+import "./main.scss";
+
+const num = 2;
 
 function component(text) {
-    const element = document.createElement('h1');
-    element.textContent = text;
-    return element;
+  const element = document.createElement("h1");
+  element.textContent = text;
+  return element;
 }
 
-document.body.prepend(component('Project is made by Webpack!'));
+document.body.prepend(component("Project is made by Webpack!"));
