@@ -1,10 +1,11 @@
 {
   "people": [
     {
-      "id": 0,
       "name": "Marina",
       "age": 33,
-      "has_pet": true
+      "has_pet": true,
+      "note": "Updated in Postman",
+      "id": 0
     },
     {
       "id": 1,
